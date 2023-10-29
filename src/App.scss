@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'myFont';
+    src: url('/font/Robotothin.woff2') format('woff2'), 
+         url('/font/Robotothin.woff') format('woff'),
+         url('/font/Robotothin.ttf') format('ttf');  
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden; 
+    background-color: rgb(29, 29, 29);
+}
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
+    background-attachment: fixed; 
+    background-size: 100% 100%; 
+
+}
