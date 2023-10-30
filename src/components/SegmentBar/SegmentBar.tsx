@@ -1,15 +1,15 @@
 import { ISegmentBarProps } from "../../types/films.types";
 import "./segmentBar.scss"
-import { useAppSelector, useAppDispatch } from '../../hooks/hooks'
-import { setState } from "../../store/stateLink/stateLinkSlice";
+import { useAppSelector } from '../../hooks/hooks'
+import { useActions } from "../../hooks/useActions";
 
 export default function SegmentBar({segment, head}:ISegmentBarProps){
     const activeLink = useAppSelector((state)=>state.activeLink.value)
-    const dispatch = useAppDispatch()
+    const {setState} = useActions()
 
     function handleClick(event:React.MouseEvent, linkIndex:number) {
         event.preventDefault();
-        dispatch(setState(linkIndex));
+        setState(linkIndex);
       }
 
     return(

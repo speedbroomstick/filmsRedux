@@ -1,0 +1,22 @@
+.searchInput{
+    width: 100%;
+    height: 2.4vw;
+    background-color: rgb(27, 27, 27);
+    border-radius: 20px;
+    border: solid 1px rgba(200, 200, 200, 0.4);
+    padding-left: 10%;
+    font-size: 1vw;
+    color: white;
+}
+.inputSearch{
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+.glass{
+    font-size: 1.5vw;
+    color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    left: 2.5vw;
+    top: 0.5vw;
+}

@@ -32,3 +32,4 @@ export interface ISegmentBarProps {
   head:string;
   segment: ISegmentBar[];
 }
+export interface 
