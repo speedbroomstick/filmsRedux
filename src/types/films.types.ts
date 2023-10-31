@@ -32,4 +32,15 @@ export interface ISegmentBarProps {
   head:string;
   segment: ISegmentBar[];
 }
-export interface 
+
+export interface IFilmCard extends Omit<IFilm,"adult"|"original_language"|"poster_path"|"release_date"|"video"|"vote_average"|"vote_count"|"original_title"|"overview">{
+
+}
+export interface IGenres{
+  id:number;
+  name:string;
+}
+export interface IMovieGroup{
+  head: string;
+  filmData: IFilmCard[];
+}

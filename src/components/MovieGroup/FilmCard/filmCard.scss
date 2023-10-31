@@ -1,0 +1,36 @@
+.filmCard{
+    display: flex;
+    flex-direction: row;
+    img{
+        width: 4vw;
+        border-radius: 10px;
+        margin-bottom: 1vw;
+    }
+}
+.descriptionMovie{
+    display:flex;
+    flex-direction: column;
+    margin-left: 1vw;
+    font-family: 'myFont';
+    position: relative;
+    h2{
+        color: white;
+        font-size: 1vw;
+    }
+    p{
+        font-size: 0.9vw;
+        color:rgba(200, 200, 200, 0.4);
+    }
+    .rating{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 1.5vw;
+        font-size: 0.9vw;
+        color:rgb(242, 255, 0);
+        p{
+            margin-left: 0.3vw;
+            color: white;
+        }
+    }
+}

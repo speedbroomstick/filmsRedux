@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface LinkState {
+interface ILinkState {
     value: number
   }
 
-const initialState:LinkState = {
-    value: 0,
+const initialState:ILinkState = {
+    value: 1,
 }
 
 export const linksSlice = createSlice({
