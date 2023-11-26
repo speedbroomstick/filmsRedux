@@ -1,17 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-// import { reducer as filmsReducer } from "./films/filmsSlice";
+import { reducer as filmsReducer } from "./films/filmsSlice";
 import {linksSlice} from "./stateLink/stateLinkSlice"
-import {popularMovieSlice} from "./popularMovie/popularMovieSlice"
-// import { api } from "./api/api";
 
 export const store = configureStore({
     reducer: {
         activeLink: linksSlice.reducer,
-        popularMovies: popularMovieSlice.reducer,
-        // [api.reducerPath]: api.reducer,
+        films: filmsReducer,
     },
-    // middleware: (getDefaultMiddleware) =>
-    //     getDefaultMiddleware().concat(api.middleware),
 })
 
 export type RootState = ReturnType<typeof store.getState>

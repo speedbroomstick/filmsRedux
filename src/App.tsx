@@ -5,16 +5,19 @@ import MainArea from "./components/MainArea/MainArea";
 import RightToolBar from "./components/RightToolBar/RightToolBar";
 import { useActions } from "./hooks/useActions";
 import { usePopularFilms } from "./hooks/usePopularFilms";
+import { useGenres } from "./hooks/useGenres";
 
 function App() {
-  const {setPopularFilms} = useActions()
-  const {data} = usePopularFilms()
+  const {setPopularFilms,setGenres} = useActions()
+  const {data:popularFilms} = usePopularFilms()
+  const {data:genres} = useGenres()
   useEffect(() => {
-    if (data) {
-      setPopularFilms(data);
+    if (popularFilms && genres) {
+      setPopularFilms(popularFilms);
+      setGenres(genres);
     }
-  }, [data, setPopularFilms]);
-
+  }, [popularFilms,genres,setGenres, setPopularFilms]);
+  
   return (
   <div className="wrapper">
     <LeftToolBar/>

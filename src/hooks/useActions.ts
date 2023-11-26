@@ -1,12 +1,12 @@
 import { useMemo } from "react";
 import { linksSlice } from "../store/stateLink/stateLinkSlice";
-import { popularMovieSlice } from "../store/popularMovie/popularMovieSlice"
+import { actions as filmsActions } from "../store/films/filmsSlice"
 import { useAppDispatch } from "./hooks";
 import { bindActionCreators } from "@reduxjs/toolkit";
 
 const RootActions = {
     ...linksSlice.actions,
-    ...popularMovieSlice.actions
+    ...filmsActions,
 }
 
 export const useActions = () =>{

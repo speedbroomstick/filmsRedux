@@ -2,10 +2,10 @@ import { useQuery } from "@tanstack/react-query"
 import filmService from "../services/film.service"
 
 
-export const usePopularFilms = () =>{
+export const useGenres = () =>{
     return useQuery(
         { 
-          queryKey: ['popularFilms'], 
-          queryFn: async ()=> await filmService.getPopularFilms(4)
+          queryKey: ['genresFilms'], 
+          queryFn: async ()=> await filmService.getGenres()
         })
 }

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IRootFilms } from "../types/films.types";
+import {IGenresRoot, IRootFilms } from "../types/films.types";
 
 class filmService{
     async getFilms() {
@@ -16,6 +16,16 @@ class filmService{
         try {
             const response = await axios.get<IRootFilms>(import.meta.env.VITE_BASE_URL_API + `/3/movie/popular?api_key=${import.meta.env.VITE_API_KEY}&page=1`);
             const resultsArray = response.data.results.slice(0,limit);
+            return resultsArray;
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    }
+    async getGenres() {
+        try {
+            const response = await axios.get<IGenresRoot>(import.meta.env.VITE_BASE_URL_API + `/3/genre/movie/list?api_key=${import.meta.env.VITE_API_KEY}`);
+            const resultsArray = response.data.genres;
             return resultsArray;
         } catch (error) {
             console.error(error);
