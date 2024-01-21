@@ -9,7 +9,7 @@ export interface IRootFilms {
   
 export interface IFilm {
     adult: boolean
-    backdrop_path: string
+    backdrop_path?: string
     genre_ids: number[]
     id: number
     original_language: string
@@ -33,7 +33,7 @@ export interface ISegmentBarProps {
   segment: ISegmentBar[];
 }
 
-export interface IFilmCard extends Omit<IFilm,"adult"|"original_language"|"backdrop_path"|"release_date"|"video"|"popularity"|"vote_count"|"original_title"|"overview">{
+export interface IFilmCard extends Omit<IFilm,"adult"|"original_language"|"release_date"|"video"|"popularity"|"vote_count"|"original_title"|"overview">{
 
 }
 export interface IGenresRoot {
@@ -48,4 +48,12 @@ export interface IGenres {
 export interface IMovieGroup{
   head: string;
   filmData: IFilmCard[];
+}
+export interface IRedButton{
+  content:string;
+  width:number;
+}
+export interface IMainPoster{
+  header: string;
+  film:IFilmCard[];
 }

@@ -1,0 +1,46 @@
+.poster{
+    display: flex;
+    flex-direction: column;
+    color: rgb(222, 222, 222);
+    padding-left: 2vw;
+.posterPhoto{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 95%;
+    height: 18vw;
+    margin-top: 20px;
+    img{
+        width: 100%;
+        height: 100%;
+        box-shadow: 0px 0px 6px 1px black;
+        border-radius: 30px;
+        object-fit: cover;
+    }
+    &::after{        
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0)); 
+        border-radius: 30px;
+        z-index: 2;
+    }
+    .description{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: 0;
+        margin: 1vw;
+        z-index: 9;
+        .title{
+            font-size: 4vw;
+        }
+        .genres{
+            font-size: 1vw;
+        }
+    }
+}
+}

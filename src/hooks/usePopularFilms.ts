@@ -6,6 +6,6 @@ export const usePopularFilms = () =>{
     return useQuery(
         { 
           queryKey: ['popularFilms'], 
-          queryFn: async ()=> await filmService.getPopularFilms(4)
+          queryFn: async ()=> await filmService.getPopularFilms(3)
         })
 }

@@ -11,7 +11,7 @@ export default function MovieGroup({head,filmData}:IMovieGroup){
                 <FilmCard
                 key={film.id}
                 id={film.id} 
-                poster_path={'https://image.tmdb.org/t/p/w500'+film.poster_path}
+                poster_path={film.poster_path}
                 genre_ids={film.genre_ids}
                 vote_average={film.vote_average}
                 title={film.title}

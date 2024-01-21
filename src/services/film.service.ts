@@ -16,6 +16,10 @@ class filmService{
         try {
             const response = await axios.get<IRootFilms>(import.meta.env.VITE_BASE_URL_API + `/3/movie/popular?api_key=${import.meta.env.VITE_API_KEY}&page=1`);
             const resultsArray = response.data.results.slice(0,limit);
+            resultsArray.map((film)=>{
+                film.backdrop_path = "https://image.tmdb.org/t/p/w1280"+film.backdrop_path;
+                film.poster_path = "https://image.tmdb.org/t/p/w500"+film.poster_path;
+            })
             return resultsArray;
         } catch (error) {
             console.error(error);
