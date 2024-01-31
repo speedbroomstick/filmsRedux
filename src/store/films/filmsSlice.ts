@@ -1,15 +1,17 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { IFilm, IGenres, } from "../../types/films.types";
+import { IFilm, IGenres,IActorInfo } from "../../types/films.types";
 
 interface IFilmsStorage {
     films: IFilm[];
     popularFilms: IFilm[];
     genres: IGenres[];
+    popularPeople: IActorInfo[];
   }
 const initialState: IFilmsStorage = {
     films: [],
     popularFilms: [],
     genres: [],
+    popularPeople: []
 };
 
 export const filmsSlice = createSlice({
@@ -24,6 +26,9 @@ export const filmsSlice = createSlice({
         },
         setGenres: (state, action: PayloadAction<IGenres[]>)=>{
             state.genres = [...action.payload];
+        },
+        setPopularPeople: (state,action:PayloadAction<IActorInfo[]>)=>{
+            state.popularPeople = [...action.payload]
         }
     }
 })

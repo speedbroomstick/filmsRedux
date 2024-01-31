@@ -3,18 +3,21 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import FilmCard from "../MovieGroup/FilmCard/FilmCard";
 import "./slider.scss";
+import { Autoplay } from "swiper/modules";
 
-export default function Slider({ films }: ISlider) {
+export default function Slider({ photoData }: ISlider) {
 
     return (
         <div className="wraperSlider">
             <h1>Comedy</h1>
             <div className="slider">
                 <Swiper
+                    modules={[Autoplay]}
                     slidesPerView={4}
+                    autoplay={{delay:5000, disableOnInteraction:false}}
                 >
-                    {films.map((film)=>(
-                            <SwiperSlide><FilmCard key={film.id} poster_path={film.poster_path} scale={{ width: 14, height: 20 }} margin={1} /></SwiperSlide>
+                    {photoData.map((data)=>(
+                            <SwiperSlide key={data}><FilmCard key={data} poster_path={data} scale={{ width: 16, height: 20 }} margin={1} /></SwiperSlide>
                     ))}
                 </Swiper>
             </div>
